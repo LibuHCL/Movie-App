@@ -1,0 +1,25 @@
+
+<div class="main-header" style="text-align:center;">
+    <div class="inner">
+      <form (submit)="movieName.value && searchMovie(movieName.value)" class="search-form">
+        <br/><br/>
+        <input type="search" name="search" id="search" placeholder="Search a movie here..." #movieName >
+        <button type="submit" (click)="changeFlag(CompFlags.SearchInfoComponent,movieName)" id="submit"  class="search-button"> <i class="btn btn-primary margin-bottom" >Search </i> </button>
+        <br>
+      </form>   
+    </div>  
+    <section *ngIf="totalResults">
+      <h4>Total Results - {{totalResults}}</h4>
+    </section> 
+  </div>
+  <br/><br/>
+  <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <search-info [movieName]="movies"></search-info> 
+        </div>
+      </div>
+    </div>
+
+
+  

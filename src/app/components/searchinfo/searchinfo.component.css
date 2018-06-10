@@ -1,0 +1,8 @@
+.movie-detail-card {
+    width: 100%;
+}
+    
+.movie-detail-container dd,
+.movie-detail-container dl {
+    margin: 0;
+}

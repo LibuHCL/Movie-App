@@ -1,0 +1,109 @@
+<div *ngIf="movieName" class="animated fadeIn">
+  <div class="movie-detail-card mdl-card mdl-shadow--2dp">
+    <div class="mdl-card__title">
+      <h2 class="mdl-card__title-text">{{movieName.Title}}</h2>
+    </div>
+    <div class="card-img">
+      <img class=".img-thumbnail" [src]='movieName?.Poster' alt="Movie Poster" *ngIf="isValidUrl(movieName.Poster)">
+    </div>
+    <div class="movie-detail-container">
+      <div class="mdl-grid">
+        <div class="mdl-cell mdl-cell--6-col">
+          <dl>
+
+            <h4>
+              <dt>Year:{{movieName?.Year}}</dt>
+            </h4>
+
+          </dl>
+          <dl>
+            <h4>
+              <dt>Rated:{{movieName?.Rated}}</dt>
+            </h4>
+
+          </dl>
+          <dl>
+            <h4>
+              <dt>Released:{{movieName?.Released}}</dt>
+            </h4>
+
+          </dl>
+          <dl>
+            <h4>
+              <dt>Runtime:{{movieName?.Runtime}}</dt>
+            </h4>
+
+          </dl>
+          <dl>
+            <h4>
+              <dt>Genre:{{movieName?.Genre}}</dt>
+            </h4>
+
+          </dl>
+          <dl>
+            <h4>
+              <dt>Director:{{movieName?.Director}}</dt>
+            </h4>
+
+          </dl>
+          <dl>
+            <h4>
+              <dt>Writer:{{movieName?.Writer}}</dt>
+            </h4>
+
+          </dl>
+          <dl>
+            <h4>
+              <dt>Actors:{{movieName?.Actors}}</dt>
+            </h4>
+
+          </dl>
+          <dl>
+            <h4>
+              <dt>Plot:{{movieName?.Plot}}</dt>
+            </h4>
+
+          </dl>
+          <dl>
+            <h4>
+              <dt>Language:{{movieName?.Language}}</dt>
+            </h4>
+
+          </dl>
+          <dl>
+            <h4>
+              <dt>Awards:{{movieName?.Awards}}</dt>
+            </h4>
+
+          </dl>
+          <dl>
+            <h4>
+              <dt>Rating List:{{movieName?.Ratings}}</dt>
+            </h4>
+
+          </dl>
+          <dl>
+            <h4>
+              <dt>IMDB Rating:{{movieName?.imdbRating}}</dt>
+            </h4>
+
+          </dl>
+          <dl>
+            <h4>
+              <dt>IMDB Votes:{{movieName?.imdbVotes}}</dt>
+            </h4>
+
+          </dl>
+          <dl>
+            <h4>
+              <dt>Type:{{movieName?.Type}}</dt>
+            </h4>
+
+          </dl>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

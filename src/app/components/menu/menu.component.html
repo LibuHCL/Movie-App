@@ -1,0 +1,23 @@
+<mat-card>
+  <mat-card-title style="margin-left:400px;">
+    <b>SOGETI Movie App Demo.</b>
+  </mat-card-title>
+  <mat-card-content>
+    <div align="center">
+      <nav class="navbar navbar-default">
+        <div class="container-fluid" align="center">
+          <a class="navbar-brand" [routerLink]="['/home']">Home</a>
+          <ul class="nav navbar-nav" align="center">
+            <li display:inline-block>
+              <a [routerLink]="['/search']" id="search" name="factory">Search</a>
+            </li>
+            <li display:inline-block>
+              <a [routerLink]="['/feature']" id="feature" name="supplier">Feature</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <router-outlet></router-outlet>
+    </div>
+  </mat-card-content>
+</mat-card>
