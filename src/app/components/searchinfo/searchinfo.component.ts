@@ -10,11 +10,11 @@ import { SearchService } from "../../service/search.service";
   export class SearchInfoComponent implements OnInit {
 
     @Input() movieName: any;
+   
 
     constructor(private searchService: SearchService) {}
 
 	ngOnInit() {
-
     }
 
     isValidUrl = url => {

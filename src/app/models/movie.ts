@@ -4,10 +4,10 @@ export interface Movie {
     Rated:string;
     Released:string;
     Runtime:string;
-    Genre:string;
+    Genre:Genre;
     Director:string;
-    Writer:string;
-    Actors:string;
+    Writer:Writer;
+    Actors:Actors;
     Plot:string;
     Language:string;
     Awards:string;
@@ -22,3 +22,13 @@ export interface Movie {
     Source:String;
     Value :String;
   }
+  export interface Genre {
+    Genre:String;
+  }
+  export interface Writer {
+    Writer:String;
+  }
+  export interface Actors {
+    Actor:String;
+  }
+

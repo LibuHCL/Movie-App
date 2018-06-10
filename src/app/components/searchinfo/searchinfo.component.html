@@ -1,109 +1,163 @@
 <div *ngIf="movieName" class="animated fadeIn">
   <div class="movie-detail-card mdl-card mdl-shadow--2dp">
-    <div class="mdl-card__title">
-      <h2 class="mdl-card__title-text">{{movieName.Title}}</h2>
-    </div>
-    <div class="card-img">
-      <img class=".img-thumbnail" [src]='movieName?.Poster' alt="Movie Poster" *ngIf="isValidUrl(movieName.Poster)">
+    <div class="card text-white bg-primary mb-3">
+      <mat-card class="example-card">
+        <mat-card-header>
+          <mat-card-title>
+            <h1>
+              <b>{{movieName.Title}}</b>
+            </h1>
+          </mat-card-title>
+        </mat-card-header>
+        <img mat-card-image [src]='movieName?.Poster'>
+      </mat-card>
     </div>
     <div class="movie-detail-container">
       <div class="mdl-grid">
         <div class="mdl-cell mdl-cell--6-col">
-          <dl>
+          <div class="card text-white bg-primary mb-3" style="max-width: 250rem;">
+            <div class="card-header"></div>
+            <div class="card-body">
+              <h1 class="card-title">Year :{{movieName?.Year}}</h1>
+              <p class="card-text"></p>
+            </div>
+            <div class="card text-white bg-primary mb-3" style="max-width: 250rem;">
+              <div class="card-header"></div>
+              <div class="card-body">
+                <h1 class="card-title">Rated :{{movieName?.Rated}}</h1>
+                <p class="card-text"></p>
+              </div>
+              <div class="card text-white bg-primary mb-3" style="max-width: 250rem;">
+                <div class="card-header"></div>
+                <div class="card-body">
+                  <h1 class="card-title">Released :{{movieName?.Released}}</h1>
+                  <p class="card-text"></p>
+                </div>
+                <div class="card text-white bg-primary mb-3" style="max-width: 250rem;">
+                  <div class="card-header"></div>
+                  <div class="card-body">
+                    <h1 class="card-title">Runtime :{{movieName?.Runtime}}</h1>
+                    <p class="card-text"></p>
+                  </div>
+                  <div mat-dialog-content>
+                      <mat-select [(ngModel)]=movieName.Genre>
+                        <mat-option *ngFor="let emoji of movieName.Genre" [value]="emoji">
+                          {{ emoji }}
+                        </mat-option>
+                      </mat-select>
+                    </div>
+                  <div class="card text-white bg-primary mb-3" style="max-width: 250rem;">
+                    <div class="card-header"></div>
+                    <div class="card-body">
+                      <h1 class="card-title">Genre :{{movieName?.Genre}}</h1>
+                      <p class="card-text"></p>
+                    </div>
+                    <div class="card text-white bg-primary mb-3" style="max-width: 250rem;">
+                      <div class="card-header"></div>
+                      <div class="card-body">
+                        <h1 class="card-title">Director :{{movieName?.Director}}</h1>
+                        <p class="card-text"></p>
+                      </div>
+                      <div class="card text-white bg-primary mb-3" style="max-width: 250rem;">
+                        <div class="card-header"></div>
+                        <div class="card-body">
+                          <h1 class="card-title">Writer :{{movieName?.Writer}}</h1>
+                          <p class="card-text"></p>
+                        </div>
+                        <div class="card text-white bg-primary mb-3" style="max-width: 250rem;">
+                          <div class="card-header"></div>
+                          <div class="card-body">
+                            <h1 class="card-title">Actors :{{movieName?.Actors}}</h1>
+                            <p class="card-text"></p>
+                          </div>
+                          <div class="card text-white bg-primary mb-3" style="max-width: 250rem;">
+                            <div class="card-header"></div>
+                            <div class="card-body">
+                              <h1 class="card-title">Plot :{{movieName?.Plot}}</h1>
+                              <p class="card-text"></p>
+                            </div>
+                            <div class="card text-white bg-primary mb-3" style="max-width: 250rem;">
+                              <div class="card-header"></div>
+                              <div class="card-body">
+                                <h1 class="card-title">Language :{{movieName?.Language}}</h1>
+                                <p class="card-text"></p>
+                              </div>
 
-            <h4>
-              <dt>Year:{{movieName?.Year}}</dt>
-            </h4>
 
-          </dl>
-          <dl>
-            <h4>
-              <dt>Rated:{{movieName?.Rated}}</dt>
-            </h4>
+                              <div class="card text-white bg-primary mb-3" style="max-width: 250rem;">
+                                <div class="card-header"></div>
+                                <div class="card-body">
+                                  <h1 class="card-title">Awards :{{movieName?.Awards}}</h1>
+                                  <p class="card-text"></p>
+                                </div>
 
-          </dl>
-          <dl>
-            <h4>
-              <dt>Released:{{movieName?.Released}}</dt>
-            </h4>
+                                <dl>
+                                  <h1>
+                                    <p>
+                                      <b>Movie Sources:</b>
+                                    </p>
+                                    <div *ngFor="let source of movieName.Ratings" layout-align="center center" style="height: 5vh">
+                                      <ul>
+                                        <li>
+                                          <span>
+                                            <h4>
+                                              <p>{{source.Source}}</p>
+                                            </h4>
+                                          </span>
 
-          </dl>
-          <dl>
-            <h4>
-              <dt>Runtime:{{movieName?.Runtime}}</dt>
-            </h4>
+                                        </li>
+                                      </ul>
 
-          </dl>
-          <dl>
-            <h4>
-              <dt>Genre:{{movieName?.Genre}}</dt>
-            </h4>
+                                    </div>
+                                  </h1>
+                                </dl>
+                                <dl>
+                                  <h1>
+                                    <p>
+                                      <b>Movie Values:</b>
+                                    </p>
+                                    <div *ngFor="let value of movieName.Ratings" layout-align="center center" style="height: 5vh">
+                                      <ul>
+                                        <li>
+                                          <span>
+                                            <h4>
+                                              <p>{{value.Value}}</p>
+                                            </h4>
+                                          </span>
 
-          </dl>
-          <dl>
-            <h4>
-              <dt>Director:{{movieName?.Director}}</dt>
-            </h4>
+                                        </li>
+                                      </ul>
 
-          </dl>
-          <dl>
-            <h4>
-              <dt>Writer:{{movieName?.Writer}}</dt>
-            </h4>
+                                    </div>
+                                  </h1>
+                                </dl>
 
-          </dl>
-          <dl>
-            <h4>
-              <dt>Actors:{{movieName?.Actors}}</dt>
-            </h4>
+                                <div class="card text-white bg-primary mb-3" style="max-width: 250rem;">
+                                  <div class="card-header"></div>
+                                  <div class="card-body">
+                                    <h1 class="card-title">IMDB Rating :{{movieName?.imdbRating}}</h1>
+                                    <p class="card-text"></p>
+                                  </div>
+                                  <div class="card text-white bg-primary mb-3" style="max-width: 250rem;">
+                                    <div class="card-header"></div>
+                                    <div class="card-body">
+                                      <h1 class="card-title">IMDB Votes :{{movieName?.imdbVotes}}</h1>
+                                      <p class="card-text"></p>
+                                    </div>
+                                    <div class="card text-white bg-primary mb-3" style="max-width: 250rem;">
+                                      <div class="card-header"></div>
+                                      <div class="card-body">
+                                        <h1 class="card-title">Type :{{movieName?.Type}}</h1>
+                                        <p class="card-text"></p>
+                                      </div>
 
-          </dl>
-          <dl>
-            <h4>
-              <dt>Plot:{{movieName?.Plot}}</dt>
-            </h4>
+                                    </div>
+                                  </div>
+                                </div>
 
-          </dl>
-          <dl>
-            <h4>
-              <dt>Language:{{movieName?.Language}}</dt>
-            </h4>
+                                
 
-          </dl>
-          <dl>
-            <h4>
-              <dt>Awards:{{movieName?.Awards}}</dt>
-            </h4>
-
-          </dl>
-          <dl>
-            <h4>
-              <dt>Rating List:{{movieName?.Ratings}}</dt>
-            </h4>
-
-          </dl>
-          <dl>
-            <h4>
-              <dt>IMDB Rating:{{movieName?.imdbRating}}</dt>
-            </h4>
-
-          </dl>
-          <dl>
-            <h4>
-              <dt>IMDB Votes:{{movieName?.imdbVotes}}</dt>
-            </h4>
-
-          </dl>
-          <dl>
-            <h4>
-              <dt>Type:{{movieName?.Type}}</dt>
-            </h4>
-
-          </dl>
-
-        </div>
-      </div>
-    </div>
-
-  </div>
-</div>
+                              </div>
+                              
+                            </div>
+                           

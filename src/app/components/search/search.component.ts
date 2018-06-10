@@ -21,6 +21,7 @@ export class SearchComponent implements OnInit{
    showLoadMore: boolean;
    selectedMovie: Movie;
    movies: Movie[];
+   languageList:any;
 
 
    @ViewChild(SearchInfoComponent)

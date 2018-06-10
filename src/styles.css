@@ -138,3 +138,30 @@ h1 {
 }
 #buttons a:hover{ border:2px inset blue;color:red;background:#f2f2f2;}
 #content{overflow:hidden}/* hide horizontal scrollbar*/
+ul {
+  list-style: circle outside;
+  list-style:none;
+   position:relative;
+   left:0%;
+}
+
+li {
+  padding-left: 0px;
+  
+}
+
+.pseudo,
+.pseudo ul {
+  list-style: none;
+}
+
+.pseudo li {
+  position: relative;
+}
+
+/* use ISO 10646 for content http://la.remifa.so/unicode/named-entities.html */
+.pseudo li:before {
+  content: '\2192';
+  position: absolute;
+  left: 0;
+}
